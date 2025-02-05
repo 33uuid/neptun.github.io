@@ -1,0 +1,250 @@
+/* Resetowanie marginesów i paddingów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tło gradientowe dla całej strony */
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #1a1a1a; /* Nowy kolor tła */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Nawigacja na górze strony */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 70vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed; /* Ustawienie na fixed */
+    top: 0; /* Przyklejenie do góry */
+    left: 0; /* Przyklejenie do lewej krawędzi */
+    width: 100%; /* Rozciągnięcie na całą szerokość */
+    z-index: 1000; /* Wyższy z-index, aby był nad innymi elementami */
+}
+
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .nav-links li a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Główna sekcja z tekstem i przyciskami */
+.hero {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    min-height: calc(100vh - 60px); /* Ustawienie wysokości, aby uwzględnić wysokość navbaru */
+}
+
+
+.hero h1 {
+    font-size: 7em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
+    transform: translateY(-80px);
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    transform: translateY(-80px);
+}
+
+
+/* Style dla przycisków */
+.buttons {
+    display: flex;
+    gap: 15px;
+    position: relative; /* Dodaj pozycjonowanie względne */
+    z-index: 1; /* Ustaw wyższy indeks z, aby były nad obrazkiem */
+    transform: translateY(-80px);
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none; /* Usuwa podkreślenie */
+    color: #fff;
+    text-align: center;
+}
+
+
+.btn.primary {
+    background-color: #0071e38b;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.btn.secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Sekcja z obrazkiem w tle */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Ustaw niższy indeks z, aby była pod tekstem i przyciskami */
+    overflow: hidden; /* Ukryj nadmiar grafiki */
+}
+
+.background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Utrzymuj proporcje grafiki i przycinaj nadmiar */
+    filter: brightness(50%); /* Zaciemnij grafikę */
+    opacity: 0.5; /* Zmniejsz przezroczystość, aby bardziej uwydatnić tekst */
+}
+
+.features {
+    margin-top: 40px; /* Dodatkowy margines od góry */
+}
+
+/* Styl dla zaokrąglonego kontenera z paddingiem w feature-item */
+.feature-item {
+    flex: 1 1 180px;
+    max-width: 200px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s, background-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-item:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.feature-item img {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+/* Stylizacja tekstu */
+.features h2 {
+    text-align: center; /* Wyśrodkowanie nagłówka */
+    margin-bottom: 20px; /* Dodanie marginesu poniżej nagłówka */
+    font-size: 2em; /* Zwiększenie rozmiaru nagłówka */
+}
+
+.features p {
+    text-align: center; /* Wyśrodkowanie opisu */
+    margin-bottom: 40px; /* Dodanie marginesu poniżej opisu */
+    font-size: 1.2em; /* Zwiększenie rozmiaru tekstu opisu */
+}
+
+/* Ustawienie siatki 2x3 */
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Większy odstęp między elementami */
+    justify-content: center;
+    align-items: center;
+    padding: 60px; /* Zwiększenie paddingu wokół listy */
+    max-width: 1300px; /* Zwiększenie maksymalnej szerokości */
+    margin: 0 auto;
+}
+
+/* Styl dla zaokrąglonego kontenera z paddingiem w feature-item */
+.feature-item {
+    flex: 1 1 220px; /* Zwiększenie rozmiaru kontenera */
+    max-width: 250px; /* Zwiększenie maksymalnej szerokości */
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 25px; /* Zwiększenie paddingu wewnątrz elementów */
+    border-radius: 20px; /* Większe zaokrąglenie krawędzi */
+    transition: transform 0.3s, background-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-item:hover {
+    transform: scale(1.1); /* Większe skalowanie przy najechaniu */
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.feature-item img {
+    width: 45px; /* Większy rozmiar ikony */
+    height: 45px; /* Większy rozmiar ikony */
+    margin-bottom: 15px; /* Większy odstęp poniżej ikony */
+}
+
+/* Ustawienie siatki 2x3 dla większych ekranów */
+@media (min-width: 768px) {
+    .feature-list {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "item1 item2 item3"
+            ". item4 item5";
+    }
+
+    .feature-item:nth-child(1) { grid-area: item1; }
+    .feature-item:nth-child(2) { grid-area: item2; }
+    .feature-item:nth-child(3) { grid-area: item3; }
+    .feature-item:nth-child(4) { 
+        grid-area: item4;
+        margin-left: -15vh; /* Przesunięcie w lewo */
+    }
+    .feature-item:nth-child(5) { 
+        grid-area: item5;
+        margin-left: -15vh; /* Przesunięcie w lewo */
+    }
+}

@@ -1,0 +1,219 @@
+/* Resetowanie marginesów i paddingów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ustawienia ogólne */
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #1a1a1a;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Nawigacja na górze strony */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 70vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed; /* Ustawienie na fixed */
+    top: 0; /* Przyklejenie do góry */
+    left: 0; /* Przyklejenie do lewej krawędzi */
+    width: 100%; /* Rozciągnięcie na całą szerokość */
+    z-index: 1000; /* Wyższy z-index, aby był nad innymi elementami */
+}
+
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .nav-links li a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Sekcja skryptów */
+.scripts-section {
+    padding: 150px 5% 60px;
+    text-align: center;
+    color: #fff;
+}
+
+.scripts-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.scripts-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+/* Siatka dla skryptów */
+.script-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Stylizacja pojedynczego skryptu */
+.script-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s, background-color 0.3s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.script-item:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.script-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.script-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.script-item .description {
+    font-size: 1em;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.script-item .availability {
+    font-size: 1.1em;
+    margin: 10px 0;
+    font-weight: bold;
+    background-color: rgba(255, 0, 0, 0.2);
+    color: #ff4d4d;
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.script-item .availability::before {
+    content: '\2716'; /* Unicode dla ikony X */
+    font-size: 1.2em;
+}
+
+.script-item .price {
+    font-size: 1.2em;
+    margin: 15px 0;
+    font-weight: bold;
+    color: #3cbeff;
+}
+
+.script-item .buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Styl dla przycisków */
+.btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.btn.primary {
+    background-color: #444;
+}
+
+.btn.secondary {
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.btn:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+/* Powiadomienie */
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 0, 0, 0.9);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 1001;
+}
+
+/* Efekt pojawienia się */
+.notification.show {
+    opacity: 0.85;
+    transform: translateX(-50%) translateY(10px);
+}
+
+/* Efekt znikania */
+.notification.hide {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .script-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .script-list {
+        grid-template-columns: 1fr;
+    }
+}

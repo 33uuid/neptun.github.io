@@ -1,0 +1,104 @@
+{
+    "functions": [
+        {
+            "name": "📌 API TEMPLATE SCRIPT",
+            "description": "This is the basic template of the Neptun API script. The first line is always a comment describing the functionality of the script",
+            "example": "# The first line is a comment, describing the API's functionality.\ndef script(api):\n   # Place the rest of your script here\n   # For example, you can use 'api.get_all_tokens()' to retrieve all tokens.\n   tokens = api.get_all_tokens()\n   print(tokens)"
+        },        
+        {
+            "name": "Get specified tokens",
+            "description": "Retrieves all stored tokens. You can also fetch tokens for a specific Discord guild.",
+            "example": "tokens = api.get_all_tokens()\n# or\ntokens = api.get_tokens_in_guild(guild_id)\n# guild_id (int) - The ID of the guild (server)."
+        },
+        {
+            "name": "Check validation",
+            "description": "Checks if a given token is valid and able to perform actions.",
+            "example": "api.check_token(token)\n# token (str) - The token you want to check."
+        },
+        {
+            "name": "Run function",
+            "description": "Run a function using the provided tokens in threading mode.",
+            "example": "api.run_with_tokens(tokens, target_function, delay, *args)\n# tokens (list) - List of tokens to execute the function with.\n# target_function (function) - The function you want to run.\n# delay (float or None) - Delay between actions.\n# *args (any) - Additional arguments for the function."
+        },
+        {
+            "name": "Join a guild",
+            "description": "Makes a token join a specific Discord guild (server) using an invite code.",
+            "example": "api.join(token, guild_id, invite_code)\n# token (str) - The token of the user.\n# guild_id (int) - The ID of the guild.\n# invite_code (str) - The invite code to join the guild."
+        },
+        {
+            "name": "Leave a guild",
+            "description": "Makes a token leave a specific Discord guild.",
+            "example": "api.quit(token, guild_id)\n# token (str) - The token of the user.\n# guild_id (int) - The ID of the guild."
+        },
+        {
+            "name": "React to an emoji",
+            "description": "Makes a token react to a specified message with a reaction emoji.",
+            "example": "api.react(token, channel_id, message_id, reaction)\n# token (str) - The token of the user.\n# channel_id (int) - The ID of the channel.\n# message_id (int) - The ID of the message to react to.\n# reaction (str) - The emoji to react with."
+        },
+        {
+            "name": "Make token online",
+            "description": "Makes a token appear as online on Discord.",
+            "example": "api.online(token)\n# token (str) - The token you want to set online."
+        },
+        {
+            "name": "Fetch messages",
+            "description": "Fetches messages from a specified channel. Maximum of 100 messages can be fetched at once.",
+            "example": "api.fetch_messages(token, channel_id, int_of_messages)\n# token (str) - The token used for fetching messages.\n# channel_id (int) - The ID of the channel to fetch messages from.\n# int_of_messages (int) - The number of messages to fetch (maximum 100)."
+        },
+        {
+            "name": "Get oAuth redirect URL",
+            "description": "Fetches the oAuth app redirection URL.",
+            "example": "api.get_oauth_redirect(token, bot_id)\n# token (str) - The token to perform the redirection.\n# bot_id (int) - The ID of the bot for redirection."
+        },
+        {
+            "name": "Authorize with Application",
+            "description": "Authorizes a token with a Discord application.",
+            "example": "api.oauth_app_bypass(token, guild_id, bot_id, redirect_url)\n# token (str) - The token to authorize.\n# guild_id (int) - The ID of the guild.\n# bot_id (int) - The bot's application ID.\n# redirect_url (str) - The redirect URL for authorization."
+        },
+        {
+            "name": "Accept rules",
+            "description": "Accepts the Discord terms of service and rules on behalf of a token.",
+            "example": "api.accept_rule(token, guild_id)\n# token (str) - The token of the user.\n# guild_id (int) - The ID of the guild where the rules need to be accepted."
+        },
+        {
+            "name": "Join a voice channel",
+            "description": "Makes a token join a specific voice channel on Discord.",
+            "example": "api.connect_vc(token, guild_id, voice_id, leave_channel, mute_microphone, mute_deaf)\n# token (str) - The token of the user.\n# guild_id (int) - The ID of the guild.\n# voice_id (int) - The ID of the voice channel to join.\n# leave_channel (bool) - Whether the user should leave the channel.\n# mute_microphone (bool) - Mute the user's microphone.\n# mute_deaf (bool) - Mute the user's headphones."
+        },
+        {
+            "name": "Get default soundboard sounds",
+            "description": "Fetches the default soundboard sounds that can be used.",
+            "example": "api.get_default_soundboard_sounds(tokens)\n# tokens (list) - List of tokens to use the soundboard."
+        },
+        {
+            "name": "Change avatar",
+            "description": "Changes the avatar of a specific token.",
+            "example": "api.avatar_change(token, encoded_avatar_with_base64)\n# token (str) - The token whose avatar is being changed.\n# encoded_avatar_with_base64 (str) - The base64-encoded image to set as the new avatar."
+        },
+        {
+            "name": "Change banner",
+            "description": "Changes the banner color of a specific token.",
+            "example": "api.change_banner(token, decimal_color)\n# token (str) - The token whose banner is being changed.\n# decimal_color (int) - The new banner color represented as a decimal value."
+        },
+        {
+            "name": "Get emojis",
+            "description": "Fetches emojis from a predefined list in 'data/emojis.txt'.",
+            "example": "api.get_emoji(count)\n# count (int) - The number of emojis to fetch."
+        },
+        {
+            "name": "Create a session",
+            "description": "Creates a new session for actions with tokens.",
+            "example": "session = api.create_session()\n# session (object) - The session object created to manage tasks."
+        },
+        {
+            "name": "Log information",
+            "description": "Logs information to the console in Neptun style.",
+            "example": "api.log(action, message, color, print_date, *extra_info_not_needed)\n# action (str) - The type of action (e.g., 'SUCCESS', 'ERROR').\n# message (str) - The log message.\n# color (str) - The color for the message (e.g., 'green', 'red').\n# print_date (bool) - Whether to print the current date.\n# *extra_info_not_needed (any) - Additional information (optional)."
+        },
+        {
+            "name": "Make user input",
+            "description": "Allows the user to input information through the console.",
+            "example": "input = api.input(question, color, print_date)\n# question (str) - The question to ask the user.\n# color (str) - The color for the question message (e.g., 'green').\n# print_date (bool) - Whether to include the date in the input prompt."
+        }
+    ]
+}
