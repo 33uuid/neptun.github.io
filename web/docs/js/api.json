@@ -3,7 +3,7 @@
         {
             "name": "📌 API TEMPLATE SCRIPT",
             "description": "This is the basic template of the Neptun API script. The first line is always a comment describing the functionality of the script",
-            "example": "# The first line is a comment, describing the API's functionality.\ndef script(api):\n   # Place the rest of your script here\n   # For example, you can use 'api.get_all_tokens()' to retrieve all tokens.\n   tokens = api.get_all_tokens()\n   print(tokens)"
+            "example": "# The first line is a comment, describing the API's functionality.\ndef run(api):\n   # Place the rest of your script here\n   # For example, you can use 'api.get_all_tokens()' to retrieve all tokens.\n   tokens = api.get_all_tokens()\n   print(tokens)"
         },        
         {
             "name": "Get specified tokens",
