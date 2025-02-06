@@ -31,6 +31,11 @@
             "example": "api.quit(token, guild_id)\n# token (str) - The token of the user.\n# guild_id (int) - The ID of the guild."
         },
         {
+            "name": "Send message",
+            "description": "Sends a message to a specific channel in a Discord guild with options for emoji count, mass ping count, and removing messages that have not been accessed.",
+            "example": "api.send_message(token, guild_id, channel_id, message, emoji_count, massping_count, remove_not_accesed)\n# token (str) - The authentication token of the user.\n# guild_id (int) - The ID of the Discord guild.\n# channel_id (int) - The ID of the channel where the message will be sent.\n# message (str) - The content of the message.\n# emoji_count (int) - The number of emojis to include in the message.\n# massping_count (int) - The number of users to mass ping in the message.\n# remove_not_accesed (bool) - Flag to remove messages that have not been accessed."
+        }
+        {
             "name": "React to an emoji",
             "description": "Makes a token react to a specified message with a reaction emoji.",
             "example": "api.react(token, channel_id, message_id, reaction)\n# token (str) - The token of the user.\n# channel_id (int) - The ID of the channel.\n# message_id (int) - The ID of the message to react to.\n# reaction (str) - The emoji to react with."
