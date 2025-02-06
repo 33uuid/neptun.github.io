@@ -32,7 +32,7 @@
         },
         {
             "name": "Send message",
-            "description": "Sends a message to a specific channel in a Discord guild with options for emoji count, mass ping count, and removing messages that have not been accessed.",
+            "description": "Sends a message to a specific channel in a Discord guild with options for emoji count, mass ping count, and removing tokens from guild list if don't have access.",
             "example": "api.send_message(token, guild_id, channel_id, message, emoji_count, massping_count, remove_not_accesed)\n# token (str) - The authentication token of the user.\n# guild_id (int) - The ID of the Discord guild.\n# channel_id (int) - The ID of the channel where the message will be sent.\n# message (str) - The content of the message.\n# emoji_count (int) - The number of emojis to include in the message.\n# massping_count (int) - The number of users to mass ping in the message.\n# remove_not_accesed (bool) - Flag to remove accounts that don't have access to the channel."
         },
         {
